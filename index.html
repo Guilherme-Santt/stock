@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Meu Estoque</h1>
+        </div>
+        <nav class="user-nav">
+            <span class="user-name">Bem-vindo, Usuário!</span>
+            </nav>
+    </header>
+
+    <main class="dashboard">
+        <section class="summary-cards">
+            <div class="card total-items">
+                <h2>Total de Itens em Estoque</h2>
+                <p class="value">1250</p>
+            </div>
+            <div class="card low-stock">
+                <h2>Itens com Estoque Baixo</h2>
+                <p class="value">35</p>
+                <ul>
+                    <li>Produto A</li>
+                    <li>Produto B</li>
+                    <li>Produto C</li>
+                </ul>
+            </div>
+            <div class="card out-of-stock">
+                <h2>Itens Esgotados</h2>
+                <p class="value">7</p>
+                <ul>
+                    <li>Produto X</li>
+                    <li>Produto Y</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="recent-movements">
+            <div class="movement-section">
+                <h2>Últimas Entradas</h2>
+                <ul>
+                    <li><span class="item-name">Caneta Bic Azul</span> (+50) - 01/07</li>
+                    <li><span class="item-name">Caderno Espiral</span> (+20) - 30/06</li>
+                </ul>
+            </div>
+            <div class="movement-section">
+                <h2>Últimas Saídas</h2>
+                <ul>
+                    <li><span class="item-name">Teclado USB</span> (-5) - 01/07</li>
+                    <li><span class="item-name">Mouse Sem Fio</span> (-10) - 30/06</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="action-buttons">
+            <button class="btn btn-primary">Registrar Entrada</button>
+            <button class="btn btn-primary">Produtos</button>
+            <button class="btn btn-secondary">Registrar Saída</button>
+            <button class="btn btn-tertiary">Consultar Produto</button>
+            <button class="btn btn-tertiary">Ver Relatórios</button>
+        </section>
+    </main>
+</body>
+</html>
