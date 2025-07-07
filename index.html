@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard de Estoque</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header class="header">
         <div class="logo">
             <h1>Meu Estoque</h1>
+        </div>
+        <div>
+            <nav class="menu">
+                <ul class="menu-list">    
+                    <li data-dropdown>Produtos
+                        <ul class="drop-down">
+                            <li>Registrar Entrada</li>
+                            <li>Registrar Saída</li>
+                            <li>Consultar Produto</li>
+                        </ul>
+                    </li>
+                    <li data-dropdown>Financeiro
+                        <ul class="drop-down">
+                            <li>Relatórios</li>
+                            <li>Faturamento</li>
+                            <li>Despesas</li>
+                        </ul>
+                    </li>
+
+                    <li data-dropdown="">Estoque
+                        <ul class="drop-down">
+                            <li>Entradas</li>
+                            <li>Saídas</li>
+                            <li>Consultar Produto</li>
+                        </ul>
+                    </li>
+                    <li data-dropdown>Configurações
+                        <ul class="drop-down">
+                            <li>Usuários</li>
+                            <li>Permissões</li>
+                            <li>Preferências</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <nav class="user-nav">
             <span class="user-name">Bem-vindo, Usuário!</span>
@@ -20,11 +55,11 @@
         <section class="summary-cards">
             <div class="card total-items">
                 <h2>Total de Itens em Estoque</h2>
-                <p class="value">1250</p>
+                <p class="value">-</p>
             </div>
             <div class="card low-stock">
                 <h2>Itens com Estoque Baixo</h2>
-                <p class="value">35</p>
+                <p class="value">-</p>
                 <ul>
                     <li>Produto A</li>
                     <li>Produto B</li>
@@ -33,7 +68,7 @@
             </div>
             <div class="card out-of-stock">
                 <h2>Itens Esgotados</h2>
-                <p class="value">7</p>
+                <p class="value">-</p>
                 <ul>
                     <li>Produto X</li>
                     <li>Produto Y</li>
@@ -59,12 +94,40 @@
         </section>
 
         <section class="action-buttons">
-            <button class="btn btn-primary">Registrar Entrada</button>
-            <button class="btn btn-primary">Produtos</button>
-            <button class="btn btn-secondary">Registrar Saída</button>
-            <button class="btn btn-tertiary">Consultar Produto</button>
-            <button class="btn btn-tertiary">Ver Relatórios</button>
+            <button id="openModal" data-valor="entrada" class="btn btn-primary">Registrar Entrada</button>
+            <button id="openModal" data-valor="produto" data='produtos' class="btn btn-primary">Produtos</button>
+            <button id="openModal" class="btn btn-secondary">Registrar Saída</button>
+            <button id="openModal" class="btn btn-tertiary">Consultar Produto</button>
+            <button id="openModal" class="btn btn-tertiary">Ver Relatórios</button>
         </section>
     </main>
+    <div class="containerModal">
+        <div class="modal">
+            <button class="fechaModal">X</button>
+
+            <div class="template-modal" data-modal="entrada" style="display: none;">
+                <form action="">
+                    <div>
+                        <label for="">Descrição</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Quantidade</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Valor</label>
+                        <input type="text">
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="template-modal" data-modal="produto" style="display: none;">
+                <h1>produtos</h1>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+<script type="module" src="main-js/index.js"></script>
