@@ -1,0 +1,57 @@
+.containerModal {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    display: none;
+}
+.containerModal.active {
+    display: flex;
+}
+
+.modal {
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.fechaModal {
+    z-index: 1000;
+    background-color: red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(-100px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.containerModal.active{
+    animation: modal .5s forwards;
+}
